@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="925.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.grimbear42.charactercreator.DisplayController">
+   <children>
+      <Text fx:id="armorClass" layoutX="564.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AC" />
+      <Text fx:id="chaSaving" layoutX="169.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cha Save" />
+      <Text fx:id="conSaving" layoutX="169.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Con Save" />
+      <Text fx:id="dexSaving" layoutX="170.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dex Save" />
+      <Text fx:id="hitDice" layoutX="434.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hit Dice" />
+      <Text fx:id="hitPoints" layoutX="320.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hit Pts" />
+      <Text fx:id="initiative" layoutX="660.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Init" />
+      <Text fx:id="intSaving" layoutX="172.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Int Save" />
+      <Text fx:id="passivePerception" layoutX="31.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passive Perception" />
+      <Text fx:id="proficiencyBonus" layoutX="469.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PB" />
+      <Text fx:id="speed" layoutX="768.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Spd" />
+      <Text fx:id="strSaving" layoutX="173.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Str Save" />
+      <Text fx:id="wisSaving" layoutX="170.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wis Save" />
+      <VBox layoutX="11.0" layoutY="121.0" prefHeight="307.0" prefWidth="153.0" spacing="8.0">
+         <children>
+            <Text fx:id="str" strokeType="OUTSIDE" strokeWidth="0.0" text="Strength" />
+            <Text fx:id="strMod" strokeType="OUTSIDE" strokeWidth="0.0" text="Str Mod" />
+            <Text fx:id="dex" strokeType="OUTSIDE" strokeWidth="0.0" text="Dexterity" />
+            <Text fx:id="dexMod" strokeType="OUTSIDE" strokeWidth="0.0" text="Dex Mod" />
+            <Text fx:id="con" strokeType="OUTSIDE" strokeWidth="0.0" text="Constitution" />
+            <Text fx:id="conMod" strokeType="OUTSIDE" strokeWidth="0.0" text="Con Mod" />
+            <Text fx:id="intell" strokeType="OUTSIDE" strokeWidth="0.0" text="Intelligence" />
+            <Text fx:id="intellMod" strokeType="OUTSIDE" strokeWidth="0.0" text="Intel Mod" />
+            <Text fx:id="wis" strokeType="OUTSIDE" strokeWidth="0.0" text="Wisdom" />
+            <Text fx:id="wisMod" strokeType="OUTSIDE" strokeWidth="0.0" text="Wis Mod" />
+            <Text fx:id="cha" strokeType="OUTSIDE" strokeWidth="0.0" text="Charisma" />
+            <Text fx:id="chaMod" strokeType="OUTSIDE" strokeWidth="0.0" text="Cha Mod" />
+         </children>
+         <padding>
+            <Insets left="25.0" top="20.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" layoutY="54.0" prefHeight="47.0" prefWidth="826.0" spacing="200.0">
+         <children>
+            <Text fx:id="raceName" strokeType="OUTSIDE" strokeWidth="0.0" text="Race" />
+            <Text fx:id="alignment" strokeType="OUTSIDE" strokeWidth="0.0" text="Alignment" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="-2.0" prefHeight="54.0" prefWidth="835.0" spacing="120.0">
+         <children>
+            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text fx:id="level" strokeType="OUTSIDE" strokeWidth="0.0" text="Level" />
+            <Text fx:id="className" strokeType="OUTSIDE" strokeWidth="0.0" text="Class" />
+            <Text fx:id="background" strokeType="OUTSIDE" strokeWidth="0.0" text="Background" />
+         </children>
+      </HBox>
+      <Text layoutX="363.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proficiency Bonus: " />
+      <Text layoutX="494.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Armor Class: " />
+      <Text layoutX="599.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Initiative: " />
+      <Text layoutX="712.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Speed: " />
+      <Text layoutX="14.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ability Scores and Modifiers" />
+      <VBox layoutX="12.0" layoutY="478.0" prefHeight="442.0" prefWidth="223.0">
+         <children>
+            <Text fx:id="skills" strokeType="OUTSIDE" strokeWidth="0.0" text="Skills" />
+         </children>
+         <padding>
+            <Insets left="25.0" top="15.0" />
+         </padding>
+      </VBox>
+      <VBox layoutX="275.0" layoutY="589.0" prefHeight="335.0" prefWidth="297.0">
+         <children>
+            <Text fx:id="features" strokeType="OUTSIDE" strokeWidth="0.0" text="features" wrappingWidth="250.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="306.0" layoutY="242.0" prefHeight="335.0" prefWidth="276.0">
+         <children>
+            <Text fx:id="proficiencies" strokeType="OUTSIDE" strokeWidth="0.0" text="proficiencies" wrappingWidth="250.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="582.0" layoutY="242.0" prefHeight="274.0" prefWidth="240.0">
+         <children>
+            <Text fx:id="equipment" strokeType="OUTSIDE" strokeWidth="0.0" text="equipment" />
+         </children>
+      </VBox>
+      <VBox layoutX="585.0" layoutY="589.0" prefHeight="335.0" prefWidth="240.0">
+         <children>
+            <Text fx:id="languages" strokeType="OUTSIDE" strokeWidth="0.0" text="languages" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

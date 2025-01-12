@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.stage.*;
 
+
 /**
  * Main class of Character Creator Application
  * Compile and execute this file to run the Character Creator
@@ -14,7 +15,7 @@ import javafx.stage.*;
  * @author Adam Barnard
  * @version 1.0 03/08/2024 
  */
-public class App extends Application {
+public class CharacterCreator extends Application {
 	
 	//Start method
 	//Loads the initial Java FX Stage and Scene 
