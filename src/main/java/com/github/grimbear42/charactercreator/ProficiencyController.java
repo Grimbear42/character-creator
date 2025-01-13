@@ -80,8 +80,8 @@ public class ProficiencyController {
 		populateList(classSkillsList, classSkillsText, classSkills, numClassSkills);
 		
 		this.raceSkills = myRace.getSkillProficiencies();
-		this.numClassSkills = myRace.getNumOfSkills();
-		populateList(raceSkillsList, raceSkillsText, raceSkills, numClassSkills);
+		this.numRaceSkills = myRace.getNumOfSkills();
+		populateList(raceSkillsList, raceSkillsText, raceSkills, numRaceSkills);
 				
 		this.backgroundSkills = myBackgrd.getSkillProficiencies();
 		this.numBackgroundSkills = myBackgrd.getNumOfSkills();
