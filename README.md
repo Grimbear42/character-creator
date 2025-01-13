@@ -64,39 +64,3 @@ The upper left skill selection list does not function properly. (It will tell yo
 
 ## Display Screen
 Armor Class does not reflect any armor you may be wearing.
-
-## Commentary and References
-This was a much more complex problem to solve than I imagined it would be when I 
-first submitted my project proposal.  I struggled with effectively designing the 
-Character model to include splitting portions into various classes.  Initially, 
-I designed each Race as a child of the CharRace class, (and similar for the 
-CharClass class) but I ran into a lot of problems with this method, so I switched 
-to the current implementation.  An example of the challenges involved in the data 
-model would be Skill roll modifiers.  Each skill has an ability that it is 
-associated with that provides its modifier to all rolls for that skill.  Every 
-class grants proficiency to certain skills, which adds an additional bonus to 
-rolls for those skills.  Additionally, some races also add this bonus to 
-specific skills.  This requires skills to get data from the Character, the 
-Character's race and the Character's class to be fully developed.  These kinds 
-of design issues will most likely become less difficult once I learn more about 
-design philosphies.  Some design issues might have been easier with the use of 
-Lists and Maps.  I decided to avoid those data structures since they were beyond 
-the scope of this class.
-I learned a significant amount from working with JavaFX for the first time.  I 
-struggled initially with being able to change scenes while also passing data.  
-The following resources (in addition to the JavaFX API documentation) were 
-extremely helpful in solving multiple JavaFX issues.</br>
-[JavaFX Tutorial](https://jenkov.com/tutorials/javafx/index.html)</br>
-[Bro Code JavaFX switch scenes](https://www.youtube.com/watch?v=hcM-R-YOKkQ)</br>
-[Bro Code JavaFX ChoiceBox](https://www.youtube.com/watch?v=hwCbXOM4_Qc)</br>
-[Bro Code JavaFX Spinner](https://www.youtube.com/watch?v=hSTEVJe4HSE)</br>
-[Bro Code JavaFX ListView](https://www.youtube.com/watch?v=Pqfd4hoi5cc)</br>
-While attempting to resolve the compiler warnings regarding the ChoiceBoxes in 
-my StatController class, I found the following page that helped me resolve parts 
-of the problem:</br>
-[StackOverflow](https://stackoverflow.com/questions/26195243/creating-an-observable-list-collection)</br>
-I was able to use the following page for assistance in adding images to a markdown document:</br>
-[Adding Images to MarkDown Pages](https://marinegeo.github.io/2018-08-10-adding-images-markdown/)</br>
-Finally, thanks to Professor Veliz for providing a huge amount of resources 
-prior to the beginning of this project.
-

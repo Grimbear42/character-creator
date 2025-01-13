@@ -42,15 +42,5 @@ public class App extends Application {
 	
 }
 
-/*
-References
-https://jenkov.com/tutorials/javafx/index.html
-After looking for how to populate my Choice Boxes without getting compile warnings
 
-https://www.youtube.com/watch?v=hcM-R-YOKkQ
-https://www.youtube.com/watch?v=hwCbXOM4_Qc
-https://www.youtube.com/watch?v=hSTEVJe4HSE
-https://www.youtube.com/watch?v=Pqfd4hoi5cc
-https://marinegeo.github.io/2018-08-10-adding-images-markdown/
-*/
 
