@@ -170,27 +170,39 @@ public class DescriptControl {
 	
 	//test for valid inputs
 	private boolean validInputs(String alignment, String background, Integer heightFeet, Integer heightInches, Integer weight, String eyeColor, String hairColor, String age) {
+		
 		if(alignment == null) {
 			alignmentError.setVisible(true);
+		} else {
+			alignmentError.setVisible(false);
 		}
 		if(background == null) {
 			backgroundError.setVisible(true);
+		} else {
+			backgroundError.setVisible(false);
 		}
 		if(eyeColor == null || eyeColor.length() == 0) {
 			eyeColorError.setVisible(true);
+		} else {
+			eyeColorError.setVisible(false);
 		}
 		if(hairColor == null || hairColor.length() == 0) {
 			hairColorError.setVisible(true);
+		} else {
+			hairColorError.setVisible(false);
 		}
-		if(age == null || age.length() == 0) {
+		if(age == null || age.length() == 0 || !isNumeric(age)) {
 			ageError.setVisible(true);
+		} else {
+			ageError.setVisible(false);
 		}
 		return !alignmentError.isVisible() && !backgroundError.isVisible() && !heightError.isVisible() && !weightError.isVisible() && !eyeColorError.isVisible() && !hairColorError.isVisible() && !ageError.isVisible();
 		
 	}
 	
 	//validation methods for each input
-	private boolean isAllLetters(CharSequence word) {
+	private boolean isAllLetters(String word) {
+		
 		for(int i = 0; i < word.length(); i++) {
 			char c = word.charAt(i);
 			if(!Character.isLetter(c) && !Character.isWhitespace(c)) {
@@ -201,12 +213,15 @@ public class DescriptControl {
 		return true;
 	}
 	
-	private boolean isNumeric(CharSequence number) {
+	private boolean isNumeric(String number) {
 		for(int i = 0; i < number.length(); i++) {
 			char c = number.charAt(i);
+			System.out.println("Is " + c +" a Digit?");
 			if(!Character.isDigit(c)) {
+				System.out.println("No it isn't");
 				return false;
 			}
+			System.out.println("Yes it is");
 		}
 		
 		return true;

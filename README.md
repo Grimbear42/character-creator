@@ -57,7 +57,7 @@ Switching between stat selection options may result in a doubling of available s
 
 ## Description Selection Screen
 Limited Backgrounds available (Currently only supports the Acolyte background)</br>
-Clicking on 'Accept Description' with an invalid value into the Hair Color, Eye Color or Age fields will result loss of function of the 'Accept Description' button until application restart.</br>
+~~Clicking on 'Accept Description' with an invalid value into the Hair Color, Eye Color or Age fields will result loss of function of the 'Accept Description' button until application restart.~~</br>
 
 ## ~~Proficiency Selection Screen~~
 ~~The upper left skill selection list does not function properly. (It will tell you to select 2 skills, then after submitting, will tell you that you may only select one, although you should be able to select 2)~~</br>
