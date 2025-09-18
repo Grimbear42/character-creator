@@ -134,6 +134,7 @@ public class StatController {
 	
     //initialization method
     //configures the initial elements and creates groupings for later manipulation
+	@SuppressWarnings("unchecked")
 	public void initialize() {
 		//Group radio buttons
 		ToggleGroup radioGroup = new ToggleGroup();
