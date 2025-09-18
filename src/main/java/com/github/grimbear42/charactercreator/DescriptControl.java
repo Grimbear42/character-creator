@@ -181,17 +181,17 @@ public class DescriptControl {
 		} else {
 			backgroundError.setVisible(false);
 		}
-		if(eyeColor == null || eyeColor.length() == 0) {
+		if(eyeColor == null || eyeColor.length() == 0 || !Charac.isOnlyLetters(eyeColor)) {
 			eyeColorError.setVisible(true);
 		} else {
 			eyeColorError.setVisible(false);
 		}
-		if(hairColor == null || hairColor.length() == 0) {
+		if(hairColor == null || hairColor.length() == 0 || !Charac.isOnlyLetters(hairColor)) {
 			hairColorError.setVisible(true);
 		} else {
 			hairColorError.setVisible(false);
 		}
-		if(age == null || age.length() == 0 || !isNumeric(age)) {
+		if(age == null || age.length() == 0 || !isNumeric(age) || !currentChar.getMyRace().isValidAge(Integer.parseInt(age))) {
 			ageError.setVisible(true);
 		} else {
 			ageError.setVisible(false);
@@ -216,12 +216,9 @@ public class DescriptControl {
 	private boolean isNumeric(String number) {
 		for(int i = 0; i < number.length(); i++) {
 			char c = number.charAt(i);
-			System.out.println("Is " + c +" a Digit?");
 			if(!Character.isDigit(c)) {
-				System.out.println("No it isn't");
 				return false;
 			}
-			System.out.println("Yes it is");
 		}
 		
 		return true;

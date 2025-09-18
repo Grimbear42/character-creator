@@ -849,7 +849,7 @@ public class Charac {
 	* 
 	* @since 1.0
 	*/
-	private boolean isOnlyLetters(String str) {
+	protected static boolean isOnlyLetters(String str) {
 		char[] sArray = str.toCharArray();
 		for(char c : sArray) {
 			if(!Character.isLetter(c) && !Character.isWhitespace(c)) {
