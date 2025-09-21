@@ -13,7 +13,7 @@ import javafx.stage.*;
 
 
 public class StatController {
-	//The current Charactre
+	//The current Character
 	private Charac currentChar;
 	//JavaFX controls
 	private Stage stage;
@@ -113,23 +113,23 @@ public class StatController {
 	private Text errorMessage;
 	
 	//Global variables for the pre-selected stat user interface
-	private ChoiceBox<Integer>[] preRollChoices;
-	private Text[] preRollModifiersTxt;
-	private Text[] preRollTotalStatTxt;
-	private Integer[] preRolledStats;
+	private List<ChoiceBox<Integer>> preRollChoices;
+	private List<Text> preRollModifiersTxt;
+	private List<Text> preRollTotalStatTxt;
+	private List<Integer> preRolledStats;
 	
 	//Global variables for rolled stat user inteface
-	private ChoiceBox<Integer>[] rollChoices;
-	private Text[] rollModifiersTxt;
-	private Text[] rollTotalStatTxt;
-	private Integer[] rolledStats;
-	private String rolledStatsString;
+	private List<ChoiceBox<Integer>> rollChoices;
+	private List<Text> rollModifiersTxt;
+	private List<Text> rollTotalStatTxt;
+	private List<Integer> rolledStats;
+	private StringBuilder rolledStatsString;
 	
 	//Selected user interface
-	private ChoiceBox<Integer>[] statChoices;
-	private Text[] statModifiersTxt;
-	private Text[] totalStatTxt;
-	private Integer[] availableStats;
+	private List<ChoiceBox<Integer>> statChoices;
+	private List<Text> statModifiersTxt;
+	private List<Text> totalStatTxt;
+	private List<Integer> availableStats;
 	
 	
     //initialization method
@@ -146,25 +146,25 @@ public class StatController {
 		//pointBuyPane.setDisable(true);
 		preRollPane.setDisable(true);
 		
-		//populate options pre-selected stat interface
-		preRollChoices = new ChoiceBox[]{preRollStrChoice, preRollDexChoice, preRollConChoice, preRollIntChoice, preRollWisChoice, preRollChaChoice};
-		preRollModifiersTxt = new Text[]{preRollStrModifierTxt, preRollDexModifierTxt, preRollConModifierTxt, preRollIntModifierTxt, preRollWisModifierTxt, preRollChaModifierTxt};
-		preRollTotalStatTxt = new Text[]{preRollStrTotalTxt, preRollDexTotalTxt, preRollConTotalTxt, preRollIntTotalTxt, preRollWisTotalTxt, preRollChaTotalTxt};
+		//populate options for pre-selected stat interface
+		preRollChoices = Arrays.asList(preRollStrChoice, preRollDexChoice, preRollConChoice, preRollIntChoice, preRollWisChoice, preRollChaChoice);
+		preRollModifiersTxt = Arrays.asList(preRollStrModifierTxt, preRollDexModifierTxt, preRollConModifierTxt, preRollIntModifierTxt, preRollWisModifierTxt, preRollChaModifierTxt);
+		preRollTotalStatTxt = Arrays.asList(preRollStrTotalTxt, preRollDexTotalTxt, preRollConTotalTxt, preRollIntTotalTxt, preRollWisTotalTxt, preRollChaTotalTxt);
 		preRolledStats = Stat.PREROLLSTATS;
 		
 		//Populate options for randomly generated stats
-		rollChoices = new ChoiceBox[]{rollStrChoice, rollDexChoice, rollConChoice, rollIntChoice, rollWisChoice, rollChaChoice};
-		rollModifiersTxt = new Text[]{rollStrModifierTxt, rollDexModifierTxt, rollConModifierTxt, rollIntModifierTxt, rollWisModifierTxt, rollChaModifierTxt};
-		rollTotalStatTxt = new Text[]{rollStrTotalTxt, rollDexTotalTxt, rollConTotalTxt, rollIntTotalTxt, rollWisTotalTxt, rollChaTotalTxt};
+		rollChoices = Arrays.asList(rollStrChoice, rollDexChoice, rollConChoice, rollIntChoice, rollWisChoice, rollChaChoice);
+		rollModifiersTxt = Arrays.asList(rollStrModifierTxt, rollDexModifierTxt, rollConModifierTxt, rollIntModifierTxt, rollWisModifierTxt, rollChaModifierTxt);
+		rollTotalStatTxt = Arrays.asList(rollStrTotalTxt, rollDexTotalTxt, rollConTotalTxt, rollIntTotalTxt, rollWisTotalTxt, rollChaTotalTxt);
 		//Randomly Generate Ability Scores
 		rolledStats = Stat.rollStats();
-		rolledStatsString = rolledStats[0].toString();
+		rolledStatsString = new StringBuilder();
 		
 		//Display randomly generated scores
-		for(int i = 1; i < rolledStats.length; i++) {
-			rolledStatsString += ", " + rolledStats[i].toString();
+		for(Integer stat : rolledStats) {
+			rolledStatsString.append(", " + String.valueOf(stat));
 		}
-		availableRolledStats.setText("Available Scores: " + rolledStatsString);
+		availableRolledStats.setText("Available Scores: " + rolledStatsString.toString());
 		
 	}
 	

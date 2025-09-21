@@ -1,5 +1,7 @@
 package com.github.grimbear42.charactercreator;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 /**
  * Stat Class
@@ -75,7 +77,7 @@ public class Stat {
 	/** 
 	 * Pre-defined ability scores as defined by the Player's Handbook.
 	 */
-	public static final Integer[] PREROLLSTATS = {8, 10, 12, 13, 14, 15};
+	public static final List<Integer> PREROLLSTATS = Arrays.asList(8, 10, 12, 13, 14, 15);
 	
 	
 	/**
@@ -108,10 +110,10 @@ public class Stat {
 	*
 	* @since 1.0
 	*/
-	protected static Integer[] rollStats() {
-		Integer[] output = new Integer[6];
+	protected static List<Integer> rollStats() {
+		List<Integer> output = new ArrayList<>();
 		for(int i = 0; i < output.length; i++) {
-			output[i] = statRoller();
+			output.add(statRoller());
 		}
 		
 		return output;
