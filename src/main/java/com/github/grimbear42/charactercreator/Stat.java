@@ -1,5 +1,6 @@
 package com.github.grimbear42.charactercreator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -112,7 +113,7 @@ public class Stat {
 	*/
 	protected static List<Integer> rollStats() {
 		List<Integer> output = new ArrayList<>();
-		for(int i = 0; i < output.length; i++) {
+		for(int i = 0; i < STATNAMES.length; i++) {
 			output.add(statRoller());
 		}
 		

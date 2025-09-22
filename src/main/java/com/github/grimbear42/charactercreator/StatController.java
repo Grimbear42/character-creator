@@ -179,10 +179,11 @@ public class StatController {
 	//choicebox with the available ability scores
 	private void populateStatInterface() {
 		int[] statModifiers = currentChar.getStatModifiers();
-		for(int i = 0; i < statModifiersTxt.length; i++) {
-			statModifiersTxt[i].setText("+" + statModifiers[i]);
+		for(int i = 0; i < statModifiersTxt.size(); i++) {
+			statModifiersTxt.get(i).setText("+" + statModifiers[i]);
 		}
 		for(ChoiceBox<Integer> statChoice : statChoices) {
+			statChoice.getItems().add(null);
 			statChoice.getItems().addAll(availableStats);
 			statChoice.setOnAction(this::updateChoiceBoxes);
 		}
@@ -234,12 +235,12 @@ public class StatController {
 	//Updates the dsiplayed Total Ability Score based on the selected value and 
 	//its modifier
 	private void updateChoiceBoxes(ActionEvent e) {
-		for(int i = 0; i < statChoices.length; i++) {
-			Integer value = statChoices[i].getValue();
+		for(int i = 0; i < statChoices.size(); i++) {
+			Integer value = statChoices.get(i).getValue();
 			if(value != null) {
-				totalStatTxt[i].setText("Total: " + (value + Integer.parseInt(statModifiersTxt[i].getText().substring(1))));
+				totalStatTxt.get(i).setText("Total: " + (value + Integer.parseInt(statModifiersTxt.get(i).getText().substring(1))));
 			} else {
-				totalStatTxt[i].setText("Total: ");
+				totalStatTxt.get(i).setText("Total: ");
 			}
 		}			
 	}
@@ -257,8 +258,8 @@ public class StatController {
 			
 			//Store selected ability scores
 			Integer[] selectedStats = new Integer[6];
-			for(int i = 0; i < statChoices.length; i++) {
-				selectedStats[i] = statChoices[i].getValue();
+			for(int i = 0; i < statChoices.size(); i++) {
+				selectedStats[i] = statChoices.get(i).getValue();
 			}
 			
 			//assign selected ability scores to the character
@@ -297,9 +298,9 @@ public class StatController {
 			selectedStats[index++] = value;			
 		}
 		Arrays.sort(selectedStats);
-		Arrays.sort(availableStats);
+		availableStats.sort(null);
 		for(int i = 0; i < selectedStats.length; i++) {
-			if(selectedStats[i] != availableStats[i]) return false;
+			if(selectedStats[i] != availableStats.get(i)) return false;
 		}
 		
 		return true;
