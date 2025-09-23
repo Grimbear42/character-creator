@@ -130,6 +130,7 @@ public class StatController {
 	private List<Text> statModifiersTxt;
 	private List<Text> totalStatTxt;
 	private List<Integer> availableStats;
+	private List<Integer> selectedStats = new ArrayList<>();
 	
 	
     //initialization method
@@ -206,7 +207,7 @@ public class StatController {
 				statChoices = rollChoices;
 				statModifiersTxt = rollModifiersTxt;
 				totalStatTxt = rollTotalStatTxt;
-				availableStats = rolledStats;
+				availableStats = new ArrayList<>(rolledStats);
 				populateStatInterface();
 			};
 			break;
@@ -221,7 +222,7 @@ public class StatController {
 				rollStatsPane.setDisable(true);
 				//pointBuyPane.setDisable(true);
 				preRollPane.setDisable(false);
-				availableStats = Stat.PREROLLSTATS;
+				availableStats = new ArrayList<>(Stat.PREROLLSTATS);
 				statChoices = preRollChoices;
 				statModifiersTxt = preRollModifiersTxt;
 				totalStatTxt = preRollTotalStatTxt;
