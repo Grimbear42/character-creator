@@ -257,11 +257,11 @@ public class StatController {
 		} else {
 			errorMessage.setVisible(false);
 			
-			//Store selected ability scores
-			Integer[] selectedStats = new Integer[6];
-			for(int i = 0; i < statChoices.size(); i++) {
-				selectedStats[i] = statChoices.get(i).getValue();
-			}
+			// //Store selected ability scores
+			// Integer[] selectedStats = new Integer[6];
+			// for(int i = 0; i < statChoices.size(); i++) {
+			// 	selectedStats[i] = statChoices.get(i).getValue();
+			// }
 			
 			//assign selected ability scores to the character
 			currentChar.setCharStats(selectedStats);
@@ -291,20 +291,18 @@ public class StatController {
 	
 	//Determines if each available ability score has only been selected once
 	private boolean isUniqueStats() {
-		Integer[] selectedStats = new Integer[6];
-		int index = 0;
+		//populate list of selected stats
 		for(ChoiceBox<Integer> statChoice : statChoices) {
 			Integer value = statChoice.getValue();
 			if(value == null) return false;
-			selectedStats[index++] = value;			
-		}
-		Arrays.sort(selectedStats);
-		availableStats.sort(null);
-		for(int i = 0; i < selectedStats.length; i++) {
-			if(selectedStats[i] != availableStats.get(i)) return false;
+			selectedStats.add(value);			
 		}
 		
-		return true;
+		//sort both lists of stats to ensure same ordering
+		selectedStats.sort(null);
+		availableStats.sort(null);
+
+		return selectedStats.equals(availableStats);
 	}
 	
 }

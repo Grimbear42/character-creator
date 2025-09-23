@@ -261,24 +261,24 @@ public class Charac {
 	/** 
 	* Accessor method for <code>charStats</code>.
 	* 
-	* @param statArray the background of this character
-	* @throws IllegalArgumentException when statArray or any value in statArray 
+	* @param statList the stats to be applied to this character
+	* @throws IllegalArgumentException when statList or any value in statList 
 	* 								   is null
 	* 
 	* @since 1.0
 	*/
-	protected void setCharStats(Integer[] statArray) {
-		if(statArray == null) {
-			throw new IllegalArgumentException("Null Array");
+	protected void setCharStats(List<Integer> statList) {
+		if(statList == null) {
+			throw new IllegalArgumentException("Null List");
 		}
 		//get racial stat modifiers
 		int[] statModifiers = myRace.getStatModifiers();
-		for(int i = 0; i < statArray.length; i++) {
-			if(statArray[i] == null) {
+		for(int i = 0; i < statList.size(); i++) {
+			if(statList.get(i) == null) {
 				throw new IllegalArgumentException("Null Stat Value");
 			}
 			//initialize each ability score
-			this.charStats[i] = new Stat(statArray[i] + statModifiers[i]);
+			this.charStats[i] = new Stat(statList.get(i) + statModifiers[i]);
 		}
 		//1st level character gets maximum hit points
 		setHitPoints(myClass.getHitDie());
