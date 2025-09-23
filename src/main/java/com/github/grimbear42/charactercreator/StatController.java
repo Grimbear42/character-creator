@@ -135,7 +135,6 @@ public class StatController {
 	
     //initialization method
     //configures the initial elements and creates groupings for later manipulation
-	@SuppressWarnings("unchecked")
 	public void initialize() {
 		//Group radio buttons
 		ToggleGroup radioGroup = new ToggleGroup();
@@ -163,9 +162,11 @@ public class StatController {
 		
 		//Display randomly generated scores
 		for(Integer stat : rolledStats) {
-			rolledStatsString.append(", " + String.valueOf(stat));
+			rolledStatsString.append(", ");
+			rolledStatsString.append(String.valueOf(stat));
 		}
-		availableRolledStats.setText("Available Scores: " + rolledStatsString.toString());
+		rolledStatsString.insert(0, "Available Scores: ");
+		availableRolledStats.setText(rolledStatsString.toString());
 		
 	}
 	
@@ -222,7 +223,7 @@ public class StatController {
 				rollStatsPane.setDisable(true);
 				//pointBuyPane.setDisable(true);
 				preRollPane.setDisable(false);
-				availableStats = new ArrayList<>(Stat.PREROLLSTATS);
+				availableStats = new ArrayList<>(preRolledStats);
 				statChoices = preRollChoices;
 				statModifiersTxt = preRollModifiersTxt;
 				totalStatTxt = preRollTotalStatTxt;
